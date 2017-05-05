@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:src="@mipmap/ic_no_avatar"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:id="@+id/robot_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dancing robot"
+        android:layout_toEndOf="@+id/avatar"
+        android:layout_alignTop="@+id/avatar"
+        android:textSize="32sp"
+        android:paddingTop="8sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/created"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Created by "
+        android:layout_toEndOf="@+id/avatar"
+        android:layout_below="@+id/robot_name"
+        android:textSize="16sp"
+        android:textStyle="italic"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/created"
+        android:text="Mike"
+        android:layout_below="@id/robot_name"
+        android:textSize="16sp"
+        android:linksClickable="true"
+        android:autoLink="all"
+        android:textColorLink="@color/colorAccent"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="On 12/05/2015"
+        android:layout_toEndOf="@+id/avatar"
+        android:layout_below="@+id/created"
+        android:textStyle="italic"/>
+    
+    <TextView
+        android:id="@+id/used_comp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:text="Components used:"
+        android:textSize="20sp"
+        android:layout_below="@+id/avatar"
+        android:paddingStart="12dp"
+        android:textStyle="bold"/>
+    
+    <TextView
+        android:id="@+id/comps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/used_comp"
+        android:text="◘ 3 Servos \n◘ Speaker \n"
+        android:textSize="17dp"
+        android:paddingStart="8dp"/>
+
+    <TextView
+        android:id="@+id/desc_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/comps"
+        android:text="Description:"
+        android:textSize="20dp"
+        android:paddingStart="12dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/desc_title"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et fringilla sapien, id tincidunt nibh. Cras pretium arcu sed mattis efficitur. Praesent vel euismod lacus. Curabitur nec purus eu urna viverra congue sed ut arcu. Etiam volutpat est nulla, vitae feugiat dui efficitur sed. Aliquam ornare, nisl sit amet varius mollis, felis enim mattis sapien, nec faucibus magna nisi vitae enim. Morbi tincidunt convallis sapien eget facilisis. Interdum et malesuada fames ac ante ipsum primis in faucibus. "
+        android:padding="12dp"
+        android:paddingTop="0dp"/>
+
+    <TextView
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rating: 5 stars"
+        android:layout_below="@+id/desc"
+        android:textSize="18dp"
+        android:paddingStart="12dp" />
+
+    <ImageView
+        android:id="@+id/star"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_action_name"
+        android:layout_below="@+id/rating"/>
+    <ImageView
+        android:id="@+id/star2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_action_name"
+        android:layout_toEndOf="@+id/star"
+        android:layout_below="@+id/rating"/>
+    <ImageView
+        android:id="@+id/star3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_action_name"
+        android:layout_below="@+id/rating"
+        android:layout_toEndOf="@+id/star2"/>
+    <ImageView
+        android:id="@+id/star4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_action_name"
+        android:layout_below="@+id/rating"
+        android:layout_toEndOf="@+id/star3"/>
+    <ImageView
+        android:id="@+id/star5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_action_name"
+        android:layout_below="@+id/rating"
+        android:layout_toEndOf="@+id/star4"/>
+
+
+
+    <Button
+        android:id="@+id/sub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/star"
+        android:text="Contact author"
+        android:layout_margin="12dp"
+        android:layout_alignParentStart="true"/>
+
+    <Button
+        android:id="@+id/contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Download"
+        android:layout_below="@id/star"
+        android:layout_toEndOf="@+id/sub"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="12dp"/>
+
+</RelativeLayout>

@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Tabbed</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="tab1">Profile</string>
+    <string name="tab2">Social</string>
+    <string name="tab3">Code</string>
+    <string name="name">nickname</string>
+    <string name="auth_reg_failed">Failed to register!</string>
+    <string name="loading">loading…,</string>
+    <string name="auth_sign_failed">Failed to sign in!</string>
+    <string name="hint_email">Email…</string>
+    <string name="hint_password">Password…</string>
+    <string name="bt_sign_in">Sign In</string>
+    <string name="bt_sing_up">Sign Up</string>
+    <string name="bt_change_login">Change Login Information</string>
+    <string name="hint_nickname">Nickname…</string>
+    <string name="servo_180">Servo 180</string>
+    <string name="servo_360">Servo 360</string>
+    <string name="speaker">Speaker</string>
+    <string name="led_display">LED Display</string>
+    <string name="_0">0</string>
+    <string name="avatar">Avatar</string>
+    <string name="hint_current_password">Enter current password…</string>
+    <string name="hint_new_password">Enter new password…</string>
+    <string name="hint_new_password_repeat">Repeat the new password…</string>
+    <string name="submit">SUBMIT</string>
+    <string name="cancel">Cancel</string>
+    <string name="mess_said">said:</string>
+    <string name="text">Text...</string>
+    <string name="send_message">Send message</string>
+    <string name="hint_name">Name...</string>
+</resources>

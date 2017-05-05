@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/chat_bubble"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_alignParentEnd="true">
+
+        <TextView
+            android:id="@+id/tv_mess_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/label_text"
+            android:textSize="16sp"
+            android:text="Help, I will like to get some answers about how you are doing that transformation of array to list!" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_mess_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_message"
+        android:layout_alignStart="@+id/ll_message"
+        android:text="Date XXXX"
+        android:textColor="@color/date_bg"
+        android:visibility="visible"
+        android:layout_marginStart="12dp"
+        android:textSize="12sp"/>
+</RelativeLayout>
