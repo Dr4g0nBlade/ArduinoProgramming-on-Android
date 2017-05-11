@@ -1,4 +1,4 @@
-package es.roboticafacil.dyor.tabbed.Adaptors;
+package es.roboticafacil.dyor.arduinosp.Adaptors;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -13,11 +13,11 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Locale;
 
-import es.roboticafacil.dyor.tabbed.Models.ChatMessage;
-import es.roboticafacil.dyor.tabbed.Models.User;
-import es.roboticafacil.dyor.tabbed.R;
-import es.roboticafacil.dyor.tabbed.Utils.FirebaseProfile;
-import es.roboticafacil.dyor.tabbed.Utils.MessageHolder;
+import es.roboticafacil.dyor.arduinosp.Models.ChatMessage;
+import es.roboticafacil.dyor.arduinosp.Models.User;
+import es.roboticafacil.dyor.arduinosp.R;
+import es.roboticafacil.dyor.arduinosp.Utils.FirebaseProfile;
+import es.roboticafacil.dyor.arduinosp.Utils.MessageHolder;
 
 /**
  * Created by Dragos Dunareanu on 06-Apr-17.

@@ -1,4 +1,4 @@
-package es.roboticafacil.dyor.tabbed.Activities.Fragments;
+package es.roboticafacil.dyor.arduinosp.Activities.Fragments;
 
 import android.app.Dialog;
 import android.content.DialogInterface;

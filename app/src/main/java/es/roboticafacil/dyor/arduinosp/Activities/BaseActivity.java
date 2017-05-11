@@ -1,4 +1,4 @@
-package es.roboticafacil.dyor.tabbed.Activities;
+package es.roboticafacil.dyor.arduinosp.Activities;
 
 //import android.app.Dialog;
 
@@ -9,7 +9,7 @@ import android.support.annotation.VisibleForTesting;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 
-import es.roboticafacil.dyor.tabbed.R;
+import es.roboticafacil.dyor.arduinosp.R;
 
 public class BaseActivity extends AppCompatActivity {
 

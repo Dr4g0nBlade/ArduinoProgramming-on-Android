@@ -1,4 +1,4 @@
-package es.roboticafacil.dyor.tabbed;
+package es.roboticafacil.dyor.arduinosp;
 
 import org.junit.Test;
 

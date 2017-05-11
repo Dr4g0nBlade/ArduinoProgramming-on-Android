@@ -1,4 +1,6 @@
-package es.roboticafacil.dyor.tabbed.Models;
+package es.roboticafacil.dyor.arduinosp.Models;
+
+import android.net.Uri;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,12 +13,14 @@ public class User {
     private String uid;
     private String email;
     private String username;
+    private String photoUri;
     private List<String> channels = new ArrayList<>();
 
-    public User(String uid, String email, String username, List<String> channels) {
+    public User(String uid, String email, String username, String photoUri, List<String> channels) {
         this.uid = uid;
         this.email = email;
         this.username = username;
+        this.photoUri = photoUri;
         this.channels = channels;
     }
 
@@ -45,6 +49,14 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getPhotoUri() {
+        return photoUri;
+    }
+
+    public void setPhotoUri(String photoUri) {
+        this.photoUri = photoUri;
     }
 
     public List<String> getJoinedChannels() {

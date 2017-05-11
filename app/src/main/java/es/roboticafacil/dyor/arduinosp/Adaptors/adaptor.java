@@ -1,4 +1,4 @@
-package es.roboticafacil.dyor.tabbed.Adaptors;
+package es.roboticafacil.dyor.arduinosp.Adaptors;
 
 import android.content.Context;
 import android.graphics.Typeface;
@@ -11,8 +11,8 @@ import android.widget.TextView;
 import java.util.HashMap;
 import java.util.List;
 
-import es.roboticafacil.dyor.tabbed.Models.Component;
-import es.roboticafacil.dyor.tabbed.R;
+import es.roboticafacil.dyor.arduinosp.Models.Component;
+import es.roboticafacil.dyor.arduinosp.R;
 
 //import android.view.LayoutInflater;
 //import android.widget.TextView;

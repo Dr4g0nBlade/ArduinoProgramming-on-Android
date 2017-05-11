@@ -1,4 +1,4 @@
-package es.roboticafacil.dyor.tabbed.Activities;
+package es.roboticafacil.dyor.arduinosp.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,11 +21,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import es.roboticafacil.dyor.tabbed.Adaptors.MessageAdaptor;
-import es.roboticafacil.dyor.tabbed.Models.ChatMessage;
-import es.roboticafacil.dyor.tabbed.Models.User;
-import es.roboticafacil.dyor.tabbed.R;
-import es.roboticafacil.dyor.tabbed.Utils.FirebaseProfile;
+import es.roboticafacil.dyor.arduinosp.Adaptors.MessageAdaptor;
+import es.roboticafacil.dyor.arduinosp.Models.ChatMessage;
+import es.roboticafacil.dyor.arduinosp.Models.User;
+import es.roboticafacil.dyor.arduinosp.R;
+import es.roboticafacil.dyor.arduinosp.Utils.FirebaseProfile;
 
 public class ChatActivity extends AppCompatActivity {
 

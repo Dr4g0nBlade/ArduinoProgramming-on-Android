@@ -1,4 +1,4 @@
-package es.roboticafacil.dyor.tabbed.Adaptors;
+package es.roboticafacil.dyor.arduinosp.Adaptors;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -11,8 +11,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import es.roboticafacil.dyor.tabbed.Models.Channel;
-import es.roboticafacil.dyor.tabbed.R;
+import es.roboticafacil.dyor.arduinosp.Models.Channel;
+import es.roboticafacil.dyor.arduinosp.R;
 
 /**
  * Created by Dragos Dunareanu on 06-Apr-17.

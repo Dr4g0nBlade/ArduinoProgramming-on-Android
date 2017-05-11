@@ -1,4 +1,4 @@
-package es.roboticafacil.dyor.tabbed.Activities;
+package es.roboticafacil.dyor.arduinosp.Activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,9 +15,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import es.roboticafacil.dyor.tabbed.Models.Channel;
-import es.roboticafacil.dyor.tabbed.R;
-import es.roboticafacil.dyor.tabbed.Utils.FirebaseProfile;
+import es.roboticafacil.dyor.arduinosp.Models.Channel;
+import es.roboticafacil.dyor.arduinosp.R;
+import es.roboticafacil.dyor.arduinosp.Utils.FirebaseProfile;
 
 public class SearchChannel extends AppCompatActivity implements View.OnClickListener {
 

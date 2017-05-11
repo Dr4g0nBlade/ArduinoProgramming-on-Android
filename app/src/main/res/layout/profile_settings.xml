@@ -1,63 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
 
     <ImageView
         android:id="@+id/iv_avatar"
-        android:layout_width="128dp"
-        android:layout_height="128dp"
-        android:src="@mipmap/ic_no_avatar"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" />
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="12dp"
+        android:src="@mipmap/ic_no_avatar"/>
 
-    <EditText
-        android:id="@+id/et_nickname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/iv_avatar"
-        android:layout_toRightOf="@+id/iv_avatar"
-        android:layout_alignTop="@+id/iv_avatar"
-        android:hint="@string/hint_nickname"/>
 
     <TextView
-        android:id="@+id/tv_id"
-        android:layout_width="match_parent"
+        android:id="@+id/tv_disp_name"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/iv_avatar"
-        android:layout_toRightOf="@+id/iv_avatar"
-        android:layout_below="@+id/tv_email"
-        android:text="ID: 0"/>
-
-    <TextView
-        android:id="@+id/tv_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/iv_avatar"
-        android:layout_toRightOf="@+id/iv_avatar"
-        android:layout_below="@+id/et_nickname"
-        android:text="Current email: email@domain.com"/>
+        android:layout_below="@+id/iv_avatar"
+        android:layout_margin="6dp"
+        android:layout_centerHorizontal="true"
+        android:text="DISPLAY NAME"
+        android:textSize="26sp" />
 
     <Button
-        android:id="@+id/bt_change_login"
+        android:id="@+id/bt_setup_arduino"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/iv_avatar"
-        android:layout_alignBottom="@+id/iv_avatar"
-        android:text="@string/bt_change_login"
-        android:layout_toRightOf="@+id/iv_avatar" />
-
-    <ExpandableListView
-        android:id="@+id/elv_boards"
+        android:layout_below="@id/tv_disp_name"
+        android:text="setup arduino"/>
+    <Button
+        android:id="@+id/bt_pair_bt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/bt_change_login"
-        android:layout_centerVertical="true"
-        android:headerDividersEnabled="false">
-
-    </ExpandableListView>
-
-
-
+        android:layout_below="@id/bt_setup_arduino"
+        android:text="Pair android with arduino"/>
 
 </RelativeLayout>

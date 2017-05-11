@@ -1,4 +1,4 @@
-package es.roboticafacil.dyor.tabbed.Utils;
+package es.roboticafacil.dyor.arduinosp.Utils;
 
 import android.net.Uri;
 import android.support.annotation.NonNull;
@@ -15,7 +15,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import es.roboticafacil.dyor.tabbed.Models.User;
+import es.roboticafacil.dyor.arduinosp.Models.User;
 
 /**
  * Created by Dragos Dunareanu on 24-Apr-17.
@@ -54,7 +54,7 @@ public class FirebaseProfile {
                 } else {
                     setLoggedIn(true);
                     Log.e("wtf", "is being set up");
-                    currentUser = new User(currentFirebaseUser.getUid(), currentFirebaseUser.getEmail(), currentFirebaseUser.getDisplayName(), new ArrayList<String>());
+                    currentUser = new User(currentFirebaseUser.getUid(), currentFirebaseUser.getEmail(), currentFirebaseUser.getDisplayName(), currentFirebaseUser.getPhotoUrl().toString(), new ArrayList<String>());
 
                     Log.e("wtf", "is set up");
                 }
@@ -83,9 +83,10 @@ public class FirebaseProfile {
         assert email != null;
         int i = email.indexOf("@");
         String username = email.substring(0, i);
+        String photoUri = user.getPhotoUrl().toString();
         Log.e("CreatingUser", "Setting no channels");
         List<String> noChannels = new ArrayList<>();
-        User newUser = new User(uid, email, username, noChannels);
+        User newUser = new User(uid, email, username, photoUri, noChannels);
 
         Log.e("CreatingUser", "no channel set, uploading");
         users.child(uid).setValue(newUser);

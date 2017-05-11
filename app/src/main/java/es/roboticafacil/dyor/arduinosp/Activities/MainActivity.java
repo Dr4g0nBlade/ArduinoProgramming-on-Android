@@ -1,4 +1,4 @@
-package es.roboticafacil.dyor.tabbed.Activities;
+package es.roboticafacil.dyor.arduinosp.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,22 +16,12 @@ import android.view.MenuItem;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import es.roboticafacil.dyor.tabbed.Activities.Tabs.MyCode;
-import es.roboticafacil.dyor.tabbed.Activities.Tabs.ProfileSettings;
-import es.roboticafacil.dyor.tabbed.Activities.Tabs.Social;
-import es.roboticafacil.dyor.tabbed.Activities.Tabs.SocialNo;
-import es.roboticafacil.dyor.tabbed.R;
-import es.roboticafacil.dyor.tabbed.Utils.FirebaseProfile;
-
-//import android.os.Debug;
-//import android.support.design.widget.FloatingActionButton;
-//import android.support.design.widget.Snackbar;
-//import android.support.v4.util.DebugUtils;
-//import android.support.v7.app.AppCompatActivity;
-//import android.view.LayoutInflater;
-//import android.view.View;
-//import android.view.ViewGroup;
-//import android.widget.TextView;
+import es.roboticafacil.dyor.arduinosp.Activities.Tabs.MyCode;
+import es.roboticafacil.dyor.arduinosp.Activities.Tabs.ProfileSettings;
+import es.roboticafacil.dyor.arduinosp.Activities.Tabs.Social;
+import es.roboticafacil.dyor.arduinosp.Activities.Tabs.SocialNo;
+import es.roboticafacil.dyor.arduinosp.R;
+import es.roboticafacil.dyor.arduinosp.Utils.FirebaseProfile;
 
 public class MainActivity extends BaseActivity {
 
@@ -61,33 +51,6 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-//        if (ContextCompat.checkSelfPermission(this,
-//                Manifest.permission_group.STORAGE)
-//                != PackageManager.PERMISSION_GRANTED) {
-//
-//            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-//                    Manifest.permission_group.STORAGE)) {
-//
-//                // Show an explanation to the user *asynchronously* -- don't block
-//                // this thread waiting for the user's response! After the user
-//                // sees the explanation, try again to request the permission.
-//
-//            } else {
-//
-//                // No explanation needed, we can request the permission.
-//
-//                ActivityCompat.requestPermissions(this,
-//                        new String[]{Manifest.permission_group.STORAGE},
-//                        MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);
-//
-//                // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
-//                // app-defined int constant. The callback method gets the
-//                // result of the request.
-//            }
-//
-//        }
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -95,18 +58,21 @@ public class MainActivity extends BaseActivity {
         fb = new FirebaseProfile();
 
 
-        final Intent welcomeScreen = new Intent(this, ChooseSignInActivity.class);
+        final Intent welcomeScreen = new Intent(this, WelcomeActivity.class);
+
+        FirebaseUser user = mAuth.getCurrentUser();
+        Log.e("lool", "lol: " + user);
+        if (user == null) {
+            startActivity(welcomeScreen);
+        } else {
+            fb.setLoggedIn(true);
+        }
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user == null) {
-                    fb.setLoggedIn(false);
-                    showSignInDialog(welcomeScreen);
-                } else {
-                    fb.setLoggedIn(true);
-                }
+
+
             }
         };
         mAuth.addAuthStateListener(mAuthListener);
@@ -218,6 +184,8 @@ public class MainActivity extends BaseActivity {
             return null;
         }
     }
+
+
 
     @Override
     public void onStop() {

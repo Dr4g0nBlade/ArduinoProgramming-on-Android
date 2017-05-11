@@ -1,4 +1,4 @@
-package es.roboticafacil.dyor.tabbed.Models;
+package es.roboticafacil.dyor.arduinosp.Models;
 
 /**
  * Created by Dragos Dunareanu on 30-Mar-17.

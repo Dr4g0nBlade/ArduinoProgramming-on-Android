@@ -1,4 +1,4 @@
-package es.roboticafacil.dyor.tabbed.Activities.Fragments;
+package es.roboticafacil.dyor.arduinosp.Activities.Fragments;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -9,8 +9,8 @@ import android.support.v7.app.AlertDialog;
 
 import com.google.blockly.android.BlocklyActivityHelper;
 
-import es.roboticafacil.dyor.tabbed.Activities.BlocklyActivity;
-import es.roboticafacil.dyor.tabbed.R;
+import es.roboticafacil.dyor.arduinosp.Activities.BlocklyActivity;
+import es.roboticafacil.dyor.arduinosp.R;
 
 /**
  * Created by Dragos Dunareanu on 13-Apr-17.

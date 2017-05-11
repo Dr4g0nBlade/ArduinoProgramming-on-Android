@@ -1,4 +1,4 @@
-package es.roboticafacil.dyor.tabbed.Activities.Tabs;
+package es.roboticafacil.dyor.arduinosp.Activities.Tabs;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,9 +13,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.util.ArrayList;
 import java.util.List;
 
-import es.roboticafacil.dyor.tabbed.Models.Channel;
-import es.roboticafacil.dyor.tabbed.R;
-import es.roboticafacil.dyor.tabbed.Utils.FirebaseProfile;
+import es.roboticafacil.dyor.arduinosp.Models.Channel;
+import es.roboticafacil.dyor.arduinosp.R;
+import es.roboticafacil.dyor.arduinosp.Utils.FirebaseProfile;
 
 /**
  * Created by Dragos Dunareanu on 06-Apr-17.

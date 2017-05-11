@@ -1,6 +1,7 @@
-package es.roboticafacil.dyor.tabbed.Activities;
+package es.roboticafacil.dyor.arduinosp.Activities;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.util.Log;
@@ -15,9 +16,9 @@ import com.google.firebase.auth.FirebaseUser;
 import java.util.ArrayList;
 import java.util.List;
 
-import es.roboticafacil.dyor.tabbed.Models.User;
-import es.roboticafacil.dyor.tabbed.R;
-import es.roboticafacil.dyor.tabbed.Utils.FirebaseProfile;
+import es.roboticafacil.dyor.arduinosp.Models.User;
+import es.roboticafacil.dyor.arduinosp.R;
+import es.roboticafacil.dyor.arduinosp.Utils.FirebaseProfile;
 
 //import android.support.v7.app.AppCompatActivity;
 
@@ -101,10 +102,11 @@ public class ChooseSignInActivity extends BaseActivity {
                         assert email != null;
                         int i = email.indexOf("@");
                         String username = email.substring(0, i);
+                        String photoUri = task.getResult().getUser().getPhotoUrl().toString();
                         Log.e("CreatingUser", "Setting no channels");
                         List<String> noChannels = new ArrayList<>();
                         noChannels.add("Welcome");
-                        User newUser = new User(uid, email, username, noChannels);
+                        User newUser = new User(uid, email, username, photoUri, noChannels);
 
                         Log.e("CreatingUser", "no channel set, uploading");
                         fp.getUsers().child(uid).setValue(newUser);

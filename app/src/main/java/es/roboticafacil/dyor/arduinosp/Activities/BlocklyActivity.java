@@ -1,4 +1,4 @@
-package es.roboticafacil.dyor.tabbed.Activities;
+package es.roboticafacil.dyor.arduinosp.Activities;
 
 import android.app.ProgressDialog;
 import android.bluetooth.BluetoothAdapter;
@@ -33,8 +33,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
-import es.roboticafacil.dyor.tabbed.Activities.Fragments.SelectSaveLocal;
-import es.roboticafacil.dyor.tabbed.R;
+import es.roboticafacil.dyor.arduinosp.Activities.Fragments.SelectSaveLocal;
+import es.roboticafacil.dyor.arduinosp.R;
+import es.roboticafacil.dyor.arduinosp.Utils.FoundBTDevices;
 
 public class BlocklyActivity extends AbstractBlocklyActivity {
 
@@ -282,8 +283,7 @@ public class BlocklyActivity extends AbstractBlocklyActivity {
     public String getReturn(String s) {
         return s;
     }
-
-
+    
     private void CheckBt() {
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
@@ -292,6 +292,7 @@ public class BlocklyActivity extends AbstractBlocklyActivity {
                     Toast.LENGTH_SHORT).show();
                    /* It tests if the bluetooth is enabled or not, if not the app will show a message. */
             mBluetoothAdapter.enable();
+            scanForBluetoothDevices();
         }
 
         if (mBluetoothAdapter == null) {
@@ -300,6 +301,12 @@ public class BlocklyActivity extends AbstractBlocklyActivity {
                     .show();
         }
     }
+
+    private void scanForBluetoothDevices() {
+        Intent intent = new Intent(this, FoundBTDevices.class);
+        startActivity(intent);
+    }
+
 
     public void Connect() {
         BluetoothDevice device = mBluetoothAdapter.getRemoteDevice(address);

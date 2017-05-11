@@ -4,8 +4,8 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "es.roboticafacil.dyor.tabbed"
-        minSdkVersion 18
+        applicationId "es.roboticafacil.dyor.arduinosp"
+        minSdkVersion 22
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -35,21 +35,29 @@ dependencies {
     compile project(':blocklylib-core-release')
     debugCompile project(':blocklylib-vertical-debug')
     compile project(':blocklylib-vertical-release')
+
     compile 'com.android.support:support-v4:25.3.1'
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:recyclerview-v7:25.3.1'
     compile 'com.android.support:design:25.3.1'
     compile 'de.hdodenhof:circleimageview:2.1.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.1'
-    compile 'com.google.firebase:firebase-auth:10.0.1'
-    compile 'com.google.firebase:firebase-database:10.0.1'
-    compile 'com.google.firebase:firebase-storage:10.0.1'
-    compile 'com.google.firebase:firebase-messaging:10.0.1'
-    compile 'com.google.firebase:firebase-core:10.0.1'
+    compile 'com.google.firebase:firebase-auth:10.2.4'
+    compile 'com.google.firebase:firebase-database:10.2.4'
+    compile 'com.google.firebase:firebase-storage:10.2.4'
+    compile 'com.google.firebase:firebase-messaging:10.2.4'
+    compile 'com.google.firebase:firebase-core:10.2.4'
     compile 'com.android.support:support-v13:25.3.1'
-    compile 'com.google.firebase:firebase-crash:10.0.1'
+    compile 'com.google.firebase:firebase-crash:10.2.4'
+    compile 'com.google.android.gms:play-services-auth:10.2.4'
+    compile 'com.squareup.picasso:picasso:2.5.2'
     testCompile 'junit:junit:4.12'
 }
+
+
+
+
+
 
 
 

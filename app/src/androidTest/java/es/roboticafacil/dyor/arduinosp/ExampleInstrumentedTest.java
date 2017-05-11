@@ -1,4 +1,4 @@
-package es.roboticafacil.dyor.tabbed;
+package es.roboticafacil.dyor.arduinosp;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

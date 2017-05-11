@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/ll_message"
@@ -17,7 +18,7 @@
             android:layout_height="wrap_content"
             android:text="Andrew"
             android:layout_alignParentTop="true"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
 
         <TextView
@@ -40,5 +41,5 @@
         android:textColor="@color/date_bg"
         android:visibility="visible"
         android:layout_marginStart="12dp"
-        android:textSize="12sp"/>
+        android:textSize="12sp" />
 </RelativeLayout>

@@ -1,4 +1,4 @@
-package es.roboticafacil.dyor.tabbed.Activities.Tabs;
+package es.roboticafacil.dyor.arduinosp.Activities.Tabs;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,13 +25,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import es.roboticafacil.dyor.tabbed.Activities.ChatActivity;
-import es.roboticafacil.dyor.tabbed.Activities.SearchChannel;
-import es.roboticafacil.dyor.tabbed.Adaptors.ChannelAdaptor;
-import es.roboticafacil.dyor.tabbed.Models.Channel;
-import es.roboticafacil.dyor.tabbed.Models.ChatMessage;
-import es.roboticafacil.dyor.tabbed.R;
-import es.roboticafacil.dyor.tabbed.Utils.FirebaseProfile;
+import es.roboticafacil.dyor.arduinosp.Activities.ChatActivity;
+import es.roboticafacil.dyor.arduinosp.Activities.SearchChannel;
+import es.roboticafacil.dyor.arduinosp.Adaptors.ChannelAdaptor;
+import es.roboticafacil.dyor.arduinosp.Models.Channel;
+import es.roboticafacil.dyor.arduinosp.Models.ChatMessage;
+import es.roboticafacil.dyor.arduinosp.R;
+import es.roboticafacil.dyor.arduinosp.Utils.FirebaseProfile;
 
 /**
  * Created by Dragos Dunareanu on 06-Apr-17.

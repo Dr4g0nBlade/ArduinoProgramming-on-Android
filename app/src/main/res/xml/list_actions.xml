@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Arduino">
+        <Preference android:title="Setting components"
+            android:summary="Here you can define what components are connected to your arduino."
+            android:key="intent_arduino_setup" />
+
+        <Preference android:title="Bluetooth Paring"
+            android:summary="Connect your phone to the arduino board through bluetooth."
+            android:key="bt_pair_intent"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Privacy">
+        <CheckBoxPreference android:title="Share arduino functionality"
+            android:summary="By turning this function on, your arduino can be controled by others users"
+            android:defaultValue="true"/>
+        <SwitchPreference android:title="Friends only"
+            android:summary="Allow only friends to control your arduino"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="es.roboticafacil.dyor.tabbed">
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    package="es.roboticafacil.dyor.arduinosp">
+
+    <uses-permission
+        android:name="android.permission.BLUETOOTH"
+        android:required="true" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
     <application
         android:allowBackup="true"
@@ -12,6 +15,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:windowSoftInputMode="stateHidden|adjustPan">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAdm-bebpt4s86efQDfZy3aIcexAsadXik" />
+
+        <activity android:name=".Activities.SetupArduino" />
+        <activity android:name=".Utils.FoundBTDevices" />
+        <activity
+            android:name=".Activities.WelcomeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme" />
         <activity
             android:name=".Activities.MainActivity"
             android:label="@string/app_name"
@@ -22,10 +36,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.WelcomeActivity" />
+        <activity android:name=".Activities.ChooseSignInActivity" />
         <activity android:name=".Activities.ChatActivity" />
-        <activity android:name=".Activities.BlocklyActivity"
-            android:theme="@style/Blockly"></activity>
+        <activity
+            android:name=".Activities.BlocklyActivity"
+            android:theme="@style/Blockly" />
+        <activity android:name=".Activities.SearchChannel" />
+        <activity android:name=".Activities.SetUpArduinp"></activity>
     </application>
 
 </manifest>

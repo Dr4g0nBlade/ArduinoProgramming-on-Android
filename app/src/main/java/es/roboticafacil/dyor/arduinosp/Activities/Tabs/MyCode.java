@@ -1,4 +1,4 @@
-package es.roboticafacil.dyor.tabbed.Activities.Tabs;
+package es.roboticafacil.dyor.arduinosp.Activities.Tabs;
 
 //import android.app.Fragment;
 
@@ -14,11 +14,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import es.roboticafacil.dyor.tabbed.Activities.BlocklyActivity;
-import es.roboticafacil.dyor.tabbed.Activities.Fragments.SelectSaveLocal;
-import es.roboticafacil.dyor.tabbed.R;
+import es.roboticafacil.dyor.arduinosp.Activities.BlocklyActivity;
+import es.roboticafacil.dyor.arduinosp.Activities.Fragments.SelectSaveLocal;
+import es.roboticafacil.dyor.arduinosp.R;
 
-import static es.roboticafacil.dyor.tabbed.Activities.MainActivity.MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE;
+import static es.roboticafacil.dyor.arduinosp.Activities.MainActivity.MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE;
 
 /**
  * Created by Dragos Dunareanu on 22-Mar-17.
