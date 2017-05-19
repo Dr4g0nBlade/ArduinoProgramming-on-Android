@@ -2,17 +2,11 @@ package es.roboticafacil.dyor.arduinosp.Activities.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.preference.Preference;
-import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
-import android.preference.PreferenceScreen;
 import android.support.annotation.Nullable;
 
-import es.roboticafacil.dyor.arduinosp.Activities.MainActivity;
 import es.roboticafacil.dyor.arduinosp.Activities.SetupArduino;
-import es.roboticafacil.dyor.arduinosp.Activities.Tabs.ProfileSettings;
-import es.roboticafacil.dyor.arduinosp.Activities.Tabs.Social;
 import es.roboticafacil.dyor.arduinosp.R;
 
 /**

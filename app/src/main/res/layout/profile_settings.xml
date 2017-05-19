@@ -38,4 +38,22 @@
         android:layout_below="@id/bt_setup_arduino"
         android:text="Pair android with arduino"/>
 
+    <TextView
+        android:id="@+id/tv_bt_text_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bt_pair_bt"
+        android:layout_alignParentStart="true"
+        android:text="Bluetooth connected to: "
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/tv_bt_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bt_pair_bt"
+        android:layout_toEndOf="@+id/tv_bt_text_status"
+        android:text="No default arduino connection"
+        android:textSize="16sp"/>
+
 </RelativeLayout>

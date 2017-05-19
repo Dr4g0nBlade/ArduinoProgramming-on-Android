@@ -1,13 +1,10 @@
 package es.roboticafacil.dyor.arduinosp.Activities;
 
 import android.content.Intent;
-import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
@@ -15,7 +12,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
@@ -26,7 +22,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
-import com.google.firebase.auth.UserInfo;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -36,24 +31,24 @@ import es.roboticafacil.dyor.arduinosp.Models.User;
 import es.roboticafacil.dyor.arduinosp.R;
 import es.roboticafacil.dyor.arduinosp.Utils.FirebaseProfile;
 
-public class WelcomeActivity extends BaseActivity implements GoogleApiClient.OnConnectionFailedListener, View.OnClickListener{
+public class WelcomeActivity extends BaseActivity implements GoogleApiClient.OnConnectionFailedListener, View.OnClickListener {
 
 
     private static final int RC_SIGN_IN = 9001;
     private static final String TAG = "WelcomeActivity";
+    DatabaseReference fd = FirebaseDatabase.getInstance().getReference();
+    User dbUser;
     private View mContentView;
     private GoogleApiClient mGoogleApiClient;
     private FirebaseAuth mAuth;
-    DatabaseReference fd = FirebaseDatabase.getInstance().getReference();
     private FirebaseProfile fb = new FirebaseProfile();
-    User dbUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
-       findViewById(R.id.bt_sign_in).setOnClickListener(this);
+        findViewById(R.id.bt_sign_in).setOnClickListener(this);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -172,7 +167,7 @@ public class WelcomeActivity extends BaseActivity implements GoogleApiClient.OnC
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.bt_sign_in:
                 signIn();
                 break;

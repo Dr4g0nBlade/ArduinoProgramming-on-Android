@@ -21,6 +21,7 @@ import es.roboticafacil.dyor.arduinosp.Activities.Tabs.ProfileSettings;
 import es.roboticafacil.dyor.arduinosp.Activities.Tabs.Social;
 import es.roboticafacil.dyor.arduinosp.Activities.Tabs.SocialNo;
 import es.roboticafacil.dyor.arduinosp.R;
+import es.roboticafacil.dyor.arduinosp.Utils.UtilBluetoothService;
 import es.roboticafacil.dyor.arduinosp.Utils.FirebaseProfile;
 
 public class MainActivity extends BaseActivity {
@@ -67,15 +68,15 @@ public class MainActivity extends BaseActivity {
         } else {
             fb.setLoggedIn(true);
         }
+        Intent btService = new Intent(getApplicationContext(), UtilBluetoothService.class);
+        startService(btService);
 
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
+        mAuth.addAuthStateListener(new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
 
-
             }
-        };
-        mAuth.addAuthStateListener(mAuthListener);
+        });
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -124,6 +125,11 @@ public class MainActivity extends BaseActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onStop() {
+        super.onStop();
+        mAuth.removeAuthStateListener(mAuthListener);
+    }
 
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
@@ -183,13 +189,5 @@ public class MainActivity extends BaseActivity {
             }
             return null;
         }
-    }
-
-
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        mAuth.removeAuthStateListener(mAuthListener);
     }
 }

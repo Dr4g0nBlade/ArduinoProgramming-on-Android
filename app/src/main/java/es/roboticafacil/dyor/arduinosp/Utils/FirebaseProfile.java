@@ -23,14 +23,6 @@ import es.roboticafacil.dyor.arduinosp.Models.User;
 
 public class FirebaseProfile {
 
-    public Boolean getLoggedIn() {
-        return loggedIn;
-    }
-
-    public void setLoggedIn(Boolean loggedIn) {
-        this.loggedIn = loggedIn;
-    }
-
     private Boolean loggedIn = false;
     private FirebaseDatabase db = FirebaseDatabase.getInstance();
     private DatabaseReference users = db.getReference("/users/");
@@ -40,9 +32,6 @@ public class FirebaseProfile {
     private FirebaseAuth.AuthStateListener mAuthListener;
     private FirebaseUser currentFirebaseUser;
     private User currentUser;
-
-    //final Map<String, User> usersMap = new HashMap<>();
-
     public FirebaseProfile() {
 
         currentFirebaseUser = firebaseAuth.getCurrentUser();
@@ -64,6 +53,15 @@ public class FirebaseProfile {
         firebaseAuth.addAuthStateListener(mAuthListener);
     }
 
+    public Boolean getLoggedIn() {
+        return loggedIn;
+    }
+
+    //final Map<String, User> usersMap = new HashMap<>();
+
+    public void setLoggedIn(Boolean loggedIn) {
+        this.loggedIn = loggedIn;
+    }
 
     public DatabaseReference getUsers() {
         return users;
@@ -114,6 +112,10 @@ public class FirebaseProfile {
         return currentFirebaseUser.getEmail();
     }
 
+    public void setCurrentUserEmail(String email) {
+        currentFirebaseUser.updateEmail(email);
+    }
+
     public Uri getCurrentPhotoUrl() {
         return currentFirebaseUser.getPhotoUrl();
     }
@@ -132,10 +134,6 @@ public class FirebaseProfile {
             }
         });
         return u[0];
-    }
-
-    public void setCurrentUserEmail(String email) {
-        currentFirebaseUser.updateEmail(email);
     }
 
     public void setCurrentUserPassword(String password) {

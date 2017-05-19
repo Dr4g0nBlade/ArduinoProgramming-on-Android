@@ -15,11 +15,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:windowSoftInputMode="stateHidden|adjustPan">
+        <service android:name=".Utils.UtilBluetoothService" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAdm-bebpt4s86efQDfZy3aIcexAsadXik" />
 
         <activity android:name=".Activities.SetupArduino" />
+        <activity android:name=".Activities.ConnectToArduino" />
         <activity android:name=".Utils.FoundBTDevices" />
         <activity
             android:name=".Activities.WelcomeActivity"
@@ -42,7 +44,11 @@
             android:name=".Activities.BlocklyActivity"
             android:theme="@style/Blockly" />
         <activity android:name=".Activities.SearchChannel" />
-        <activity android:name=".Activities.SetUpArduinp"></activity>
+        <activity android:name=".Activities.SetUpArduinp" />
+        <activity
+            android:name=".SetupPins"
+            android:label="@string/title_activity_setup_pins" />
+        <activity android:name=".Activities.BTConnectActivity"></activity>
     </application>
 
 </manifest>

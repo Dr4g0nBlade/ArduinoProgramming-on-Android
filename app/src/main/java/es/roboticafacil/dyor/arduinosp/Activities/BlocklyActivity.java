@@ -11,6 +11,7 @@ import android.os.Handler;
 import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -33,39 +34,62 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
+import es.roboticafacil.dyor.arduinosp.Activities.Fragments.BluetoothDevicesListAlreadyPaired;
 import es.roboticafacil.dyor.arduinosp.Activities.Fragments.SelectSaveLocal;
 import es.roboticafacil.dyor.arduinosp.R;
 import es.roboticafacil.dyor.arduinosp.Utils.FoundBTDevices;
 
 public class BlocklyActivity extends AbstractBlocklyActivity {
 
+    private static final String TAG = "Jon";
+    private static final UUID MY_UUID = UUID
+            .fromString("00001101-0000-1000-8000-00805F9B34FB");
+    private static final List<String> JAVASCRIPT_GENERATORS = Arrays.asList(
+            // Custom block generators go here. Default blocks are already included.
+
+    );
+    private static String address = "XX:XX:XX:XX:XX:XX";
     Intent intent;
     String xml;
-
     String mCode;
     BaseActivity ba;
     WorkspaceFragment mFragmentWorkshop;
     String[] fileList;
-
-    private ProgressDialog mProgressDialog;
     String xmlName;
-
     SelectSaveLocal mSelectDialog;
-
-    private static final String TAG = "Jon";
-    private BluetoothAdapter mBluetoothAdapter = null;
-    private BluetoothSocket btSocket = null;
-    private OutputStream outStream = null;
-    private static String address = "XX:XX:XX:XX:XX:XX";
-    private static final UUID MY_UUID = UUID
-            .fromString("00001101-0000-1000-8000-00805F9B34FB");
-    private InputStream inStream = null;
     Handler handler = new Handler();
-
     byte delimiter = 10;
     boolean stopWorker = false;
     int readBufferPosition = 0;
     byte[] readBuffer = new byte[1024];
+    private ProgressDialog mProgressDialog;
+    private BluetoothAdapter mBluetoothAdapter = null;
+    private BluetoothSocket btSocket = null;
+    private OutputStream outStream = null;
+    private InputStream inStream = null;
+    private Handler mHandler = new Handler();
+    CodeGenerationRequest.CodeGeneratorCallback mCodeGeneratorCallback =
+            new CodeGenerationRequest.CodeGeneratorCallback() {
+                @Override
+                public void onFinishCodeGeneration(final String generatedCode) {
+                    mHandler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            mCode = generatedCode;
+
+                            Toast.makeText(BlocklyActivity.this, mCode, Toast.LENGTH_LONG).show();
+                            FirebaseDatabase.getInstance().getReference("/saves/").push().setValue("Testing DB" + mCode).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    hideProgressDialog();
+                                }
+                            });
+
+
+                        }
+                    });
+                }
+            };
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
@@ -102,44 +126,14 @@ public class BlocklyActivity extends AbstractBlocklyActivity {
 
     }
 
-    private static final List<String> JAVASCRIPT_GENERATORS = Arrays.asList(
-            // Custom block generators go here. Default blocks are already included.
-
-    );
-    private Handler mHandler = new Handler();
+    //  CodeGenerationRequest.CodeGeneratorCallback mCodeGeneratorCallback =
+    //         new LoggingCodeGeneratorCallback(this, "code");
 
     @NonNull
     @Override
     protected List<String> getGeneratorsJsPaths() {
         return JAVASCRIPT_GENERATORS;
     }
-
-    //  CodeGenerationRequest.CodeGeneratorCallback mCodeGeneratorCallback =
-    //         new LoggingCodeGeneratorCallback(this, "code");
-
-    CodeGenerationRequest.CodeGeneratorCallback mCodeGeneratorCallback =
-            new CodeGenerationRequest.CodeGeneratorCallback() {
-                @Override
-                public void onFinishCodeGeneration(final String generatedCode) {
-                    mHandler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            mCode = generatedCode;
-
-                            Toast.makeText(BlocklyActivity.this, mCode, Toast.LENGTH_LONG).show();
-                            FirebaseDatabase.getInstance().getReference("/saves/").push().setValue("Testing DB" + mCode).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    hideProgressDialog();
-                                }
-                            });
-
-
-                        }
-                    });
-                }
-            };
-
 
     @NonNull
     @Override
@@ -169,7 +163,12 @@ public class BlocklyActivity extends AbstractBlocklyActivity {
     @Override
     protected void onRunCode() {
         super.onRunCode();
+        FragmentManager fm = getSupportFragmentManager();
+        BluetoothDevicesListAlreadyPaired dialog = new BluetoothDevicesListAlreadyPaired();
+
+        dialog.show(fm, "Bluetooth Dialog");
     }
+
 
     @Override
     public void onSaveWorkspace() {
@@ -213,7 +212,6 @@ public class BlocklyActivity extends AbstractBlocklyActivity {
                     });
             builder.show();
         }
-
 
         CheckBt();
 
@@ -283,7 +281,7 @@ public class BlocklyActivity extends AbstractBlocklyActivity {
     public String getReturn(String s) {
         return s;
     }
-    
+
     private void CheckBt() {
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
@@ -389,6 +387,5 @@ public class BlocklyActivity extends AbstractBlocklyActivity {
 
         workerThread.start();
     }
-
 
 }

@@ -51,8 +51,11 @@ dependencies {
     compile 'com.google.firebase:firebase-crash:10.2.4'
     compile 'com.google.android.gms:play-services-auth:10.2.4'
     compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.google.code.gson:gson:2.8.0'
     testCompile 'junit:junit:4.12'
 }
+
+
 
 
 

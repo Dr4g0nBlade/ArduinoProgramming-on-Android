@@ -3,7 +3,6 @@ package es.roboticafacil.dyor.arduinosp.Utils;
 import android.app.ListActivity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
-import android.bluetooth.BluetoothSocket;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -11,7 +10,6 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
-import android.widget.ArrayAdapter;
 
 import java.util.ArrayList;
 
@@ -22,7 +20,7 @@ import es.roboticafacil.dyor.arduinosp.Models.BluetoothObject;
  * Created by Dragos Dunareanu on 08-May-17.
  */
 
-public class FoundBTDevices  extends ListActivity{
+public class FoundBTDevices extends ListActivity {
     private BluetoothAdapter mBluetoothAdapter;
     private ArrayList<BluetoothObject> arrayOfFoundBTDevices;
 
@@ -45,7 +43,7 @@ public class FoundBTDevices  extends ListActivity{
             public void onReceive(Context context, Intent intent) {
                 String action = intent.getAction();
 
-                if (BluetoothDevice.ACTION_FOUND.equals(action)){
+                if (BluetoothDevice.ACTION_FOUND.equals(action)) {
                     BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
 
                     int rssi = intent.getShortExtra(BluetoothDevice.EXTRA_RSSI, Short.MIN_VALUE);

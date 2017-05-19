@@ -1,21 +1,13 @@
 package es.roboticafacil.dyor.arduinosp.Activities.Tabs;
 
-import android.app.Dialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.os.Parcel;
-import android.preference.Preference;
-import android.preference.PreferenceFragment;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
@@ -26,7 +18,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,10 +30,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import es.roboticafacil.dyor.arduinosp.Activities.BTConnectActivity;
+import es.roboticafacil.dyor.arduinosp.Activities.ConnectToArduino;
 import es.roboticafacil.dyor.arduinosp.Activities.Fragments.BluetoothDevicesListPairing;
 import es.roboticafacil.dyor.arduinosp.Activities.Fragments.ProfileSettingsFragment;
 import es.roboticafacil.dyor.arduinosp.Activities.SetUpArduinp;
-import es.roboticafacil.dyor.arduinosp.Activities.SetupArduino;
 import es.roboticafacil.dyor.arduinosp.Models.BluetoothObject;
 import es.roboticafacil.dyor.arduinosp.R;
 import es.roboticafacil.dyor.arduinosp.Utils.FoundBTDevices;
@@ -78,7 +70,7 @@ public class ProfileSettings extends android.support.v4.app.Fragment {
                 } else {
                     ivAvatar.setEnabled(true);
                     Picasso.with(getContext())
-                            .load(user.getPhotoUrl().toString().replace("/s96-c/","/s300-c/"))
+                            .load(user.getPhotoUrl().toString().replace("/s96-c/", "/s300-c/"))
                             .into(ivAvatar, new Callback() {
                                 @Override
                                 public void onSuccess() {
@@ -114,11 +106,17 @@ public class ProfileSettings extends android.support.v4.app.Fragment {
         btPairBT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentManager fm = getChildFragmentManager();
-                BluetoothDevicesListPairing dialog = new BluetoothDevicesListPairing();
-                dialog.show(fm, "Bluetooth Dialog");
+//                FragmentManager fm = getChildFragmentManager();
+//                BluetoothDevicesListPairing dialog = new BluetoothDevicesListPairing();
+//                dialog.show(fm, "Bluetooth Dialog");
+                Intent intent = new Intent(getActivity(), BTConnectActivity.class);
+                startActivity(intent);
             }
         });
+
+        TextView tvBTStatus = (TextView) v.findViewById(R.id.tv_bt_status);
+
+
 
         return v;
     }
@@ -134,17 +132,14 @@ public class ProfileSettings extends android.support.v4.app.Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == REQUEST_ENABLE_BT)
-        {
-            if (resultCode == 0)
-            {
+        if (requestCode == REQUEST_ENABLE_BT) {
+            if (resultCode == 0) {
                 // If the resultCode is 0, the user selected "No" when prompt to
                 // allow the app to enable bluetooth.
                 // You may want to display a dialog explaining what would happen if
                 // the user doesn't enable bluetooth.
                 Toast.makeText(getActivity(), "The user decided to deny bluetooth access", Toast.LENGTH_LONG).show();
-            }
-            else
+            } else
                 Log.i("BT", "User allowed bluetooth access!");
         }
     }
@@ -170,20 +165,17 @@ public class ProfileSettings extends android.support.v4.app.Fragment {
     }
 
 
-    private List<BluetoothObject> getArrayOfAlreadyPairedBluetoothDevices()
-    {
+    private List<BluetoothObject> getArrayOfAlreadyPairedBluetoothDevices() {
         List<BluetoothObject> arrayOfAlreadyPairedBTDevices = null;
 
         // Query paired devices
         Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
         // If there are any paired devices
-        if (pairedDevices.size() > 0)
-        {
+        if (pairedDevices.size() > 0) {
             arrayOfAlreadyPairedBTDevices = new ArrayList<>();
 
             // Loop through paired devices
-            for (BluetoothDevice device : pairedDevices)
-            {
+            for (BluetoothDevice device : pairedDevices) {
                 // Create the device object and add it to the arrayList of devices
                 BluetoothObject bluetoothObject = new BluetoothObject();
                 bluetoothObject.setBluetooth_name(device.getName());

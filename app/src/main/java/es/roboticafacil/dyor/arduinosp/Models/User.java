@@ -1,7 +1,5 @@
 package es.roboticafacil.dyor.arduinosp.Models;
 
-import android.net.Uri;
-
 import java.util.ArrayList;
 import java.util.List;
 

@@ -18,8 +18,8 @@ import es.roboticafacil.dyor.arduinosp.R;
 
 public class SelectSaveTypeDialogFragment extends DialogFragment {
 
-    int userChoice;
     protected BlocklyActivityHelper mBlockly;
+    int userChoice;
     private BlocklyActivity ba = new BlocklyActivity();
 
 

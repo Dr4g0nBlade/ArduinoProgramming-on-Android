@@ -1,6 +1,5 @@
 package es.roboticafacil.dyor.arduinosp.Activities;
 
-import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
@@ -61,20 +60,17 @@ public class SetupArduino extends AppCompatActivity {
     }
 
 
-    private List<BluetoothObject> getArrayOfAlreadyPairedBluetoothDevices()
-    {
+    private List<BluetoothObject> getArrayOfAlreadyPairedBluetoothDevices() {
         List<BluetoothObject> arrayOfAlreadyPairedBTDevices = null;
 
         // Query paired devices
         Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
         // If there are any paired devices
-        if (pairedDevices.size() > 0)
-        {
+        if (pairedDevices.size() > 0) {
             arrayOfAlreadyPairedBTDevices = new ArrayList<>();
 
             // Loop through paired devices
-            for (BluetoothDevice device : pairedDevices)
-            {
+            for (BluetoothDevice device : pairedDevices) {
                 // Create the device object and add it to the arrayList of devices
                 BluetoothObject bluetoothObject = new BluetoothObject();
                 bluetoothObject.setBluetooth_name(device.getName());

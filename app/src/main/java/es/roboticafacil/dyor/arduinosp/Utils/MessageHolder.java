@@ -10,9 +10,6 @@ import android.widget.TextView;
 public class MessageHolder {
     public TextView userName;
     public TextView textMessage;
-
-    boolean vis = false;
-
     public View.OnClickListener clickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -23,6 +20,7 @@ public class MessageHolder {
                 date.setVisibility(View.GONE);
         }
     };
+    boolean vis = false;
 
     public class SentMessage extends MessageHolder {
         public TextView dateText;

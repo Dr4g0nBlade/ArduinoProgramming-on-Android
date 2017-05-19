@@ -5,4 +5,8 @@
         <item>Device</item>
         <item>Both</item>
     </string-array>
+    <string-array name="components">
+        <item>servo</item>
+        <item>bluetooth</item>
+    </string-array>
 </resources>

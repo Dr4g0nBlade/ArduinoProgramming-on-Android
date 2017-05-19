@@ -23,12 +23,10 @@ import es.roboticafacil.dyor.arduinosp.Utils.FirebaseProfile;
 
 public class SocialNo extends android.support.v4.app.Fragment {
 
+    final List<Channel> channels = new ArrayList<>();
+    FirebaseProfile fbf;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
-
-    FirebaseProfile fbf;
-
-    final List<Channel> channels = new ArrayList<>();
 
     @Nullable
     @Override

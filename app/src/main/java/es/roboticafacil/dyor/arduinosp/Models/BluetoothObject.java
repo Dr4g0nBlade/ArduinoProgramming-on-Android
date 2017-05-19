@@ -8,8 +8,17 @@ import android.os.Parcelable;
  * Created by Dragos Dunareanu on 08-May-17.
  */
 
-public class BluetoothObject implements Parcelable{
+public class BluetoothObject implements Parcelable {
 
+    public static final Parcelable.Creator<BluetoothObject> CREATOR = new Parcelable.Creator<BluetoothObject>() {
+        public BluetoothObject createFromParcel(Parcel in) {
+            return new BluetoothObject();
+        }
+
+        public BluetoothObject[] newArray(int size) {
+            return new BluetoothObject[size];
+        }
+    };
     private String bluetooth_name;
     private String bluetooth_address;
     private int bluetooth_state;
@@ -17,19 +26,27 @@ public class BluetoothObject implements Parcelable{
     private ParcelUuid[] bluetooth_uuids;
     private int bluetooth_rssi;
 
-    public void setBluetooth_name(String bluetooth_name) {
-        this.bluetooth_name = bluetooth_name;
+    public BluetoothObject() {
+    }
+
+    public BluetoothObject(Parcel in) {
+        super();
+        readFromParcel(in);
     }
 
     public String getBluetooth_name() {
         return bluetooth_name;
     }
 
+    public void setBluetooth_name(String bluetooth_name) {
+        this.bluetooth_name = bluetooth_name;
+    }
+
     public String getBluetooth_address() {
         return bluetooth_address;
     }
 
-    public void setBluetooth_address(String bluetooth_address){
+    public void setBluetooth_address(String bluetooth_address) {
         this.bluetooth_address = bluetooth_address;
     }
 
@@ -65,27 +82,9 @@ public class BluetoothObject implements Parcelable{
         this.bluetooth_rssi = bluetooth_rssi;
     }
 
-    public BluetoothObject() {
-    }
-
-    public BluetoothObject(Parcel in){
-        super();
-        readFromParcel(in);
-    }
-
-    public void readFromParcel(Parcel in){
+    public void readFromParcel(Parcel in) {
         bluetooth_name = in.readString();
     }
-
-    public static final Parcelable.Creator<BluetoothObject> CREATOR = new Parcelable.Creator<BluetoothObject>(){
-        public BluetoothObject createFromParcel(Parcel in){
-            return new BluetoothObject();
-        }
-
-        public BluetoothObject[] newArray(int size){
-            return new BluetoothObject[size];
-        }
-    };
 
     @Override
     public int describeContents() {

@@ -30,6 +30,7 @@ public class MyCode extends android.support.v4.app.Fragment {
     //      android.Manifest.permission.READ_EXTERNAL_STORAGE);
 
     boolean access = false;
+    SelectSaveLocal mDialog;
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -47,8 +48,6 @@ public class MyCode extends android.support.v4.app.Fragment {
                 return;
         }
     }
-
-    SelectSaveLocal mDialog;
 
     @Nullable
     @Override
