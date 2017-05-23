@@ -34,7 +34,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
+import es.roboticafacil.dyor.arduinosp.Activities.Fragments.BluetoothDevicesListAlreadyPaired;
+import es.roboticafacil.dyor.arduinosp.Activities.Fragments.SelectSaveLocal;
 import es.roboticafacil.dyor.arduinosp.R;
+import es.roboticafacil.dyor.arduinosp.Utils.FoundBTDevices;
 
 public class BlocklyActivity extends AbstractBlocklyActivity {
 

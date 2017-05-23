@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import es.roboticafacil.dyor.arduinosp.Models.Channel;
 import es.roboticafacil.dyor.arduinosp.R;
 
 /**

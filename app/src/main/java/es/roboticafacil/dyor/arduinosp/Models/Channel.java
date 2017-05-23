@@ -5,6 +5,8 @@ import android.graphics.Bitmap;
 import java.util.List;
 import java.util.Map;
 
+import es.roboticafacil.dyor.arduinosp.Utils.FirebaseProfile;
+
 /**
  * Created by Dragos Dunareanu on 06-Apr-17.
  */

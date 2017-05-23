@@ -9,6 +9,7 @@ import android.support.v7.app.AlertDialog;
 
 import com.google.blockly.android.BlocklyActivityHelper;
 
+import es.roboticafacil.dyor.arduinosp.Activities.BlocklyActivity;
 import es.roboticafacil.dyor.arduinosp.R;
 
 /**

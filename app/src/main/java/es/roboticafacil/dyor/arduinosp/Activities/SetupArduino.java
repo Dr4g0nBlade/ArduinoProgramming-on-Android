@@ -16,6 +16,7 @@ import java.util.Set;
 
 import es.roboticafacil.dyor.arduinosp.Models.BluetoothObject;
 import es.roboticafacil.dyor.arduinosp.R;
+import es.roboticafacil.dyor.arduinosp.Utils.FoundBTDevices;
 
 /**
  * Created by Dragos Dunareanu on 10-May-17.

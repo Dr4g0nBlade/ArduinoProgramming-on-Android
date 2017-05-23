@@ -18,7 +18,9 @@ import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.List;
 
+import es.roboticafacil.dyor.arduinosp.Adaptors.SearchBTAdaptor;
 import es.roboticafacil.dyor.arduinosp.R;
+import es.roboticafacil.dyor.arduinosp.Utils.UtilBluetoothService;
 
 /**
  * Created by Dragos Dunareanu on 16-May-17.

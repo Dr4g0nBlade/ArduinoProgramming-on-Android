@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 
 import java.util.List;
 
+import es.roboticafacil.dyor.arduinosp.Models.BluetoothObject;
 import es.roboticafacil.dyor.arduinosp.R;
 
 /**

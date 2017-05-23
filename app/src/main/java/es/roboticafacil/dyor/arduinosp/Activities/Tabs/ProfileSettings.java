@@ -29,7 +29,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import es.roboticafacil.dyor.arduinosp.Activities.BTConnectActivity;
+import es.roboticafacil.dyor.arduinosp.Activities.Fragments.ProfileSettingsFragment;
+import es.roboticafacil.dyor.arduinosp.Activities.SetUpArduinp;
+import es.roboticafacil.dyor.arduinosp.Models.BluetoothObject;
 import es.roboticafacil.dyor.arduinosp.R;
+import es.roboticafacil.dyor.arduinosp.Utils.FoundBTDevices;
 
 /**
  * Created by Dragos Dunareanu on 22-Mar-17.

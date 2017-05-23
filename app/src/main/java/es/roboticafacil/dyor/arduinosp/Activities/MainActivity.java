@@ -16,7 +16,13 @@ import android.view.MenuItem;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import es.roboticafacil.dyor.arduinosp.Activities.Tabs.MyCode;
+import es.roboticafacil.dyor.arduinosp.Activities.Tabs.ProfileSettings;
+import es.roboticafacil.dyor.arduinosp.Activities.Tabs.Social;
+import es.roboticafacil.dyor.arduinosp.Activities.Tabs.SocialNo;
 import es.roboticafacil.dyor.arduinosp.R;
+import es.roboticafacil.dyor.arduinosp.Utils.FirebaseProfile;
+import es.roboticafacil.dyor.arduinosp.Utils.UtilBluetoothService;
 
 public class MainActivity extends BaseActivity {
 

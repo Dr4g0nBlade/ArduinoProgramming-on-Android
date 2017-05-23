@@ -15,6 +15,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import es.roboticafacil.dyor.arduinosp.Models.User;
+
 /**
  * Created by Dragos Dunareanu on 24-Apr-17.
  */

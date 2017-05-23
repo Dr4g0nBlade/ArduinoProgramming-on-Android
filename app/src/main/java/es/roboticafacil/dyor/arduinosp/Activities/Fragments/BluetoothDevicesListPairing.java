@@ -18,6 +18,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
+import es.roboticafacil.dyor.arduinosp.Adaptors.DeviceListAdaptor;
 import es.roboticafacil.dyor.arduinosp.R;
 
 /**

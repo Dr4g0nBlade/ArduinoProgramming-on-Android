@@ -11,6 +11,7 @@ import android.widget.TextView;
 import java.util.HashMap;
 import java.util.List;
 
+import es.roboticafacil.dyor.arduinosp.Models.Component;
 import es.roboticafacil.dyor.arduinosp.R;
 
 //import android.view.LayoutInflater;
