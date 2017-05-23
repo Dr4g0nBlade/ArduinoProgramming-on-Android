@@ -21,11 +21,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import es.roboticafacil.dyor.arduinosp.Adaptors.MessageAdaptor;
-import es.roboticafacil.dyor.arduinosp.Models.ChatMessage;
-import es.roboticafacil.dyor.arduinosp.Models.User;
 import es.roboticafacil.dyor.arduinosp.R;
-import es.roboticafacil.dyor.arduinosp.Utils.FirebaseProfile;
 
 public class ChatActivity extends AppCompatActivity {
 

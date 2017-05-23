@@ -15,9 +15,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import es.roboticafacil.dyor.arduinosp.Models.Channel;
 import es.roboticafacil.dyor.arduinosp.R;
-import es.roboticafacil.dyor.arduinosp.Utils.FirebaseProfile;
 
 public class SearchChannel extends AppCompatActivity implements View.OnClickListener {
 

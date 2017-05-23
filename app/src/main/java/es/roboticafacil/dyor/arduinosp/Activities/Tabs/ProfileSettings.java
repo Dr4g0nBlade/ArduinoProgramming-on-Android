@@ -8,7 +8,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.util.Log;
@@ -30,14 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-import es.roboticafacil.dyor.arduinosp.Activities.BTConnectActivity;
-import es.roboticafacil.dyor.arduinosp.Activities.ConnectToArduino;
-import es.roboticafacil.dyor.arduinosp.Activities.Fragments.BluetoothDevicesListPairing;
-import es.roboticafacil.dyor.arduinosp.Activities.Fragments.ProfileSettingsFragment;
-import es.roboticafacil.dyor.arduinosp.Activities.SetUpArduinp;
-import es.roboticafacil.dyor.arduinosp.Models.BluetoothObject;
 import es.roboticafacil.dyor.arduinosp.R;
-import es.roboticafacil.dyor.arduinosp.Utils.FoundBTDevices;
 
 /**
  * Created by Dragos Dunareanu on 22-Mar-17.

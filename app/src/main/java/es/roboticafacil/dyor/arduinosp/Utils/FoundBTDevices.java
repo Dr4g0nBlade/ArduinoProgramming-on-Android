@@ -13,9 +13,6 @@ import android.support.annotation.Nullable;
 
 import java.util.ArrayList;
 
-import es.roboticafacil.dyor.arduinosp.Adaptors.FoundBTDevicesAdaptor;
-import es.roboticafacil.dyor.arduinosp.Models.BluetoothObject;
-
 /**
  * Created by Dragos Dunareanu on 08-May-17.
  */

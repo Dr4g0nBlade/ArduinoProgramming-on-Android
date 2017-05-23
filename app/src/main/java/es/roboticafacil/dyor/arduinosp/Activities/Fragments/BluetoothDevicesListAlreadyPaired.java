@@ -5,8 +5,6 @@ import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.os.ParcelUuid;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
@@ -27,7 +25,6 @@ import java.util.List;
 import es.roboticafacil.dyor.arduinosp.Adaptors.DeviceListAdaptor;
 import es.roboticafacil.dyor.arduinosp.R;
 import es.roboticafacil.dyor.arduinosp.Utils.BluetoothConnectTask;
-import es.roboticafacil.dyor.arduinosp.Utils.BluetoothSendTask;
 
 /**
  * Created by Dragos Dunareanu on 11-May-17.

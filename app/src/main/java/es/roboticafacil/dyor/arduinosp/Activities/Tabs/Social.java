@@ -25,13 +25,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import es.roboticafacil.dyor.arduinosp.Activities.ChatActivity;
-import es.roboticafacil.dyor.arduinosp.Activities.SearchChannel;
-import es.roboticafacil.dyor.arduinosp.Adaptors.ChannelAdaptor;
-import es.roboticafacil.dyor.arduinosp.Models.Channel;
-import es.roboticafacil.dyor.arduinosp.Models.ChatMessage;
 import es.roboticafacil.dyor.arduinosp.R;
-import es.roboticafacil.dyor.arduinosp.Utils.FirebaseProfile;
 
 /**
  * Created by Dragos Dunareanu on 06-Apr-17.

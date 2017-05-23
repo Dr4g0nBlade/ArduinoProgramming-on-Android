@@ -13,11 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Locale;
 
-import es.roboticafacil.dyor.arduinosp.Models.ChatMessage;
-import es.roboticafacil.dyor.arduinosp.Models.User;
 import es.roboticafacil.dyor.arduinosp.R;
-import es.roboticafacil.dyor.arduinosp.Utils.FirebaseProfile;
-import es.roboticafacil.dyor.arduinosp.Utils.MessageHolder;
 
 /**
  * Created by Dragos Dunareanu on 06-Apr-17.

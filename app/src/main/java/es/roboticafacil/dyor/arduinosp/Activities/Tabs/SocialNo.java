@@ -13,9 +13,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.util.ArrayList;
 import java.util.List;
 
-import es.roboticafacil.dyor.arduinosp.Models.Channel;
 import es.roboticafacil.dyor.arduinosp.R;
-import es.roboticafacil.dyor.arduinosp.Utils.FirebaseProfile;
 
 /**
  * Created by Dragos Dunareanu on 06-Apr-17.

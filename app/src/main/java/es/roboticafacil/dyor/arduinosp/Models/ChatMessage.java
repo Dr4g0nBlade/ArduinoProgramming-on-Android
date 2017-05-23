@@ -2,8 +2,6 @@ package es.roboticafacil.dyor.arduinosp.Models;
 
 import android.util.Log;
 
-import es.roboticafacil.dyor.arduinosp.Utils.FirebaseProfile;
-
 /**
  * Created by Dragos Dunareanu on 06-Apr-17.
  */

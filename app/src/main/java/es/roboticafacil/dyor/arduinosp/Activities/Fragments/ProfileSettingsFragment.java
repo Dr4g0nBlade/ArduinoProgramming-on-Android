@@ -6,7 +6,6 @@ import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.support.annotation.Nullable;
 
-import es.roboticafacil.dyor.arduinosp.Activities.SetupArduino;
 import es.roboticafacil.dyor.arduinosp.R;
 
 /**
