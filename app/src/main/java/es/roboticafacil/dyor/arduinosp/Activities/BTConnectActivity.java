@@ -7,8 +7,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -34,17 +34,22 @@ public class BTConnectActivity extends AppCompatActivity {
 
     private SearchBTAdaptor adaptor;
 
+
+    Intent changeDefault = new Intent();
+    Intent pair = new Intent();
+    Intent search = new Intent();
+
     final BroadcastReceiver discover = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
+            Log.d("UtilBluetoothService", "I got something");
             if (action.equals(UtilBluetoothService.SEND_DEVICE)){
-                BluetoothDevice device = gson.fromJson(intent.getStringExtra("device"), BluetoothDevice.class);
-                if (mDevices.contains(device)){
-                    inRange.set(mDevices.lastIndexOf(device), true);
-                } else {
+                String deviceAddress = intent.getStringExtra("device_address");
+                BluetoothDevice device = mBluetoothAdaptor.getRemoteDevice(deviceAddress);
+                Log.d("UtilBluetoothService", "I found: " + deviceAddress);
+                if (!mDevices.contains(device)){
                     mDevices.add(device);
-                    inRange.add(mDevices.indexOf(device), true);
                 }
             }
             adaptor.notifyDataSetChanged();
@@ -59,7 +64,9 @@ public class BTConnectActivity extends AppCompatActivity {
         bluetoothPrefs = getSharedPreferences("bluetooth", MODE_PRIVATE);
 
         IntentFilter intentFilter = new IntentFilter(UtilBluetoothService.CMD_SEARCH_DEVICES);
-        registerReceiver(discover, intentFilter);
+        getApplicationContext().registerReceiver(discover, intentFilter);
+
+        setupIntentCommands();
 
         ListView lvBTDevices = (ListView) findViewById(R.id.lv_bt_devices);
         lvBTDevices.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -67,30 +74,38 @@ public class BTConnectActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 BluetoothDevice device = mDevices.get(position);
                 if (mBluetoothAdaptor.getBondedDevices().contains(device)) {
-                    Intent changeDefault = new Intent();
-                    changeDefault.setAction(UtilBluetoothService.CMD_SET_DEFAULT_DEVICE);
-                    changeDefault.putExtra("device", device);
-                    Log.d("testingt", "Sending broadcast set default: "+device);
-                    sendBroadcast(changeDefault);
+                    changeDefault.putExtra("default_device_address", device.getAddress());
+                    Log.d("UtilBluetoothService", "Sending broadcast set default: " + device);
+                    getApplicationContext().sendBroadcast(changeDefault);
                 } else {
-                    Intent pair = new Intent();
-                    pair.setAction("pair_with");
-                    sendBroadcast(pair);
+                    pair.putExtra("device_address", device.getAddress());
+                    getApplicationContext().sendBroadcast(pair);
                 }
             }
         });
 
         mDevices.addAll(mBluetoothAdaptor.getBondedDevices());
-        for (BluetoothDevice device : mDevices){
-            inRange.add(mDevices.indexOf(device), false);
-        }
+
+
 
         IntentFilter discoverFilter = new IntentFilter(UtilBluetoothService.SEND_DEVICE);
-        registerReceiver(discover, discoverFilter);
+        getApplicationContext().registerReceiver(discover, discoverFilter);
 
         adaptor = new SearchBTAdaptor(getApplicationContext(), mDevices, bluetoothPrefs, inRange);
         lvBTDevices.setAdapter(adaptor);
+
+        findViewById(R.id.bt_search_devices).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getApplicationContext().sendBroadcast(search);
+                Log.d("UtilBluetoothService", "Sending command to search devices");
+            }
+        });
     }
 
-
+    private void setupIntentCommands() {
+        changeDefault.setAction(UtilBluetoothService.CMD_SET_DEFAULT_DEVICE);
+        pair.setAction(UtilBluetoothService.CMD_PAIR_WITH);
+        search.setAction(UtilBluetoothService.CMD_SEARCH_DEVICES);
+    }
 }

@@ -8,7 +8,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.util.Log;
@@ -31,8 +30,6 @@ import java.util.List;
 import java.util.Set;
 
 import es.roboticafacil.dyor.arduinosp.Activities.BTConnectActivity;
-import es.roboticafacil.dyor.arduinosp.Activities.ConnectToArduino;
-import es.roboticafacil.dyor.arduinosp.Activities.Fragments.BluetoothDevicesListPairing;
 import es.roboticafacil.dyor.arduinosp.Activities.Fragments.ProfileSettingsFragment;
 import es.roboticafacil.dyor.arduinosp.Activities.SetUpArduinp;
 import es.roboticafacil.dyor.arduinosp.Models.BluetoothObject;
@@ -57,6 +54,7 @@ public class ProfileSettings extends android.support.v4.app.Fragment {
         final View v = inflater.inflate(R.layout.profile_settings, container, false);
 
         mAuth = FirebaseAuth.getInstance();
+        if (isAdded())
         mAuth.addAuthStateListener(new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {

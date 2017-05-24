@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:windowSoftInputMode="stateHidden|adjustPan">
-        <service android:name=".Utils.UtilBluetoothService" />
+        <service android:name=".Utils.UtilBluetoothService" android:stopWithTask="true" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAdm-bebpt4s86efQDfZy3aIcexAsadXik" />
